@@ -58,9 +58,7 @@ function Home(props) {
         renderItem={({ item }) => (
           <Post
             id={item.id}
-            email={item.data.email}
-            descripcionPost={item.data.descripcionPost}
-            likes={item.data.likes}
+            data={item.data}
             navigation={props.navigation}
           />
         )}
@@ -74,5 +72,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
   },
-});
+  title: {
 
+  }
+});
