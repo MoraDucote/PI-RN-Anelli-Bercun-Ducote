@@ -10,6 +10,16 @@ function Login(props) {
   const [error, setError] = useState('');
   // guardo el mail y la contra que escribe el usuario  
 
+  useEffect(() => {
+  // firebase revisa si hay un usuario logueado
+  auth.onAuthStateChanged((user) => {
+    // si hay usuario, entra directo a la app
+    if (user) {
+      props.navigation.navigate('NavegacionTab');
+    }
+  });
+}, []);
+
   function onSubmit() {
     if (email === '' || password === '') {
       setError('Todos los campos son obligatorios');
