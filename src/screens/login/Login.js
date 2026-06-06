@@ -30,17 +30,24 @@ function Login(props) {
         setError('');
 // limpio los inputs del mail y contrase;a y el msj de error 
 
-        props.navigation.navigate('Home');
-// redirigo al usuario a home 
+        props.navigation.navigate('NavegacionTab');
       })
 //ejecuto este bloque solo si ocurrio un error
       .catch((error) => {
         console.log('Error al loguear usuario');
         console.log(error);
 
-        setError(error.message);
-// guardo el msj de error en el estado para mostrarlo en pantalla
-      });
+        // error.code muestra el tipo de error de Firebase
+        if (error.code === 'auth/wrong-password') {
+          setError('La contraseña es incorrecta');
+        } else if (error.code === 'auth/user-not-found') {
+          setError('No existe un usuario registrado con ese email');
+        } else if (error.code === 'auth/invalid-email') {
+          setError('El email ingresado no es válido');
+        } else {
+          setError('No se pudo iniciar sesión');
+        }
+});
   }
 
  return (
