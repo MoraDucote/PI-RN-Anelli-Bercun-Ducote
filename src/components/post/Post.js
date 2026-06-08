@@ -40,7 +40,7 @@ function Post(props) {
   }
 
   function goToComments() {
-    // Navegamos a la pantalla de comentarios y enviamos el id del posteo
+    // navegamos a la pantalla de comentarios y enviamos el id del posteo
     props.navigation.navigate('Comments', {
       postId: props.id
     });
@@ -52,41 +52,69 @@ function Post(props) {
 
       <Text style={styles.description}>{props.data.descripcionPost}</Text>
 
-      <Text style={styles.likes}>
-        Likes: {likes.length}
-      </Text>
+      <View style={styles.actions}>
+        <Pressable onPress={() => likePost()}>
+          <Text style={styles.likeButton}>
+            {userLiked ? '♥' : '♡'} {likes.length}
+          </Text>
+        </Pressable>
 
-      <Pressable onPress={() => likePost()}>
-        <Text style={styles.likeButton}>
-          {userLiked ? 'Quitar me gusta' : 'Me gusta'}
-        </Text>
-      </Pressable>
-
-      <Pressable onPress={() => goToComments()}>
-        <Text style={styles.commentButton}>Comentar</Text>
-      </Pressable>
+        <Pressable onPress={() => goToComments()}>
+          <Text style={styles.commentButton}>Comentar</Text>
+        </Pressable>
+      </View>
     </View>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
-
+    backgroundColor: '#32475b',
+    borderWidth: 1,
+    borderColor: '#496074',
+    borderRadius: 14,
+    width: 700,
+    height: 200,
+    padding: 14,
+    margin: 8,
+    justifyContent: 'space-between',
+    alignSelf: 'center'
   },
+
   email: {
-
+    color: '#f2f0ec',
+    fontSize: 13,
+    fontWeight: '600',
+    marginBottom: 8
   },
+
   description: {
-
+    color: '#f2f0ec',
+    fontSize: 15,
+    lineHeight: 20,
+    borderWidth: 1,
+    borderColor: '#5e788d',
+    borderRadius: 10,
+    padding: 10,
+    minHeight: 80
   },
-  likes: {
 
+  actions: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center'
   },
+
   likeButton: {
-
+    color: '#8fb3c1',
+    fontSize: 16,
+    fontWeight: '600'
   },
-  commentButton: {
 
+  commentButton: {
+    color: '#8fb3c1',
+    fontSize: 13,
+    fontWeight: '500'
   }
 });
 
