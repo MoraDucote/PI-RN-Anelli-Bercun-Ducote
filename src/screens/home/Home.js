@@ -43,7 +43,9 @@ function Home(props) {
     return (
       <View style={styles.container}>
         <Text style={styles.title}>Home</Text>
-        <Text>Para ver los posteos tenés que estar logueado.</Text>
+        <View style={styles.card}>
+          <Text style={styles.text}>Para ver los posteos tenés que estar logueado.</Text>
+        </View>
       </View>
     );
   }
@@ -71,8 +73,30 @@ export default Home;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    backgroundColor: '#26394b',
+    paddingHorizontal: 20,
+    paddingTop: 55
   },
-  title: {
 
-  }
+  card: {
+    backgroundColor: '#32475b',
+    borderWidth: 1,
+    borderColor: '#496074',
+    borderRadius: 16,
+    padding: 22
+  },
+
+  title: {
+    color: '#f2f0ec',
+    fontSize: 30,
+    letterSpacing: 3,
+    fontWeight: '600',
+    marginBottom: 8
+  },
+
+  text: {
+    color: '#c9d3da',
+    fontSize: 15,
+    lineHeight: 22
+  },
 });
