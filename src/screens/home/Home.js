@@ -43,6 +43,7 @@ function Home(props) {
     return (
       <View style={styles.container}>
         <Text style={styles.title}>Home</Text>
+        
         <View style={styles.card}>
           <Text style={styles.text}>Para ver los posteos tenés que estar logueado.</Text>
         </View>
