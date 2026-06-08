@@ -29,8 +29,7 @@ function Profile(props) {
     useEffect(() => {
         db.collection('posts')
             // entro a la colceccion posts
-            .where('email', '==', email)
-            .onSnapshot((docs) => {
+            .where('email', '==', email).onSnapshot((docs) => {
                 // busco los posts del usaurio y armo un array
                 let postsDelUsuario = [];
 
@@ -93,19 +92,104 @@ function Profile(props) {
 
 const styles = StyleSheet.create({
     container: {
+        flex: 1,
+        backgroundColor: '#26394b',
+        paddingHorizontal: 22,
+        paddingTop: 55
+    },
 
+    logo: {
+        color: '#f2f0ec',
+        fontSize: 32,
+        letterSpacing: 5,
+        fontStyle: 'italic',
+        fontWeight: '600'
+    },
+
+    subtitle: {
+        color: '#aab5bf',
+        fontSize: 12,
+        letterSpacing: 7,
+        marginTop: 2,
+        marginBottom: 30
+    },
+
+    card: {
+        backgroundColor: '#32475b',
+        borderWidth: 1,
+        borderColor: '#496074',
+        borderRadius: 18,
+        padding: 24,
+        alignItems: 'center'
+    },
+
+    avatar: {
+        width: 86,
+        height: 86,
+        borderRadius: 43,
+        backgroundColor: '#6f98a8',
+        justifyContent: 'center',
+        alignItems: 'center',
+        borderWidth: 2,
+        borderColor: '#8fb3c1',
+        marginBottom: 16
+    },
+
+    avatarText: {
+        color: '#f2f0ec',
+        fontSize: 34,
+        fontWeight: '600'
     },
 
     title: {
+        color: '#f2f0ec',
+        fontSize: 24,
+        fontWeight: '600',
+        marginBottom: 4
+    },
 
+    text: {
+        color: '#aab5bf',
+        fontSize: 15,
+        marginBottom: 24
+    },
+
+    infoBox: {
+        width: '100%',
+        backgroundColor: '#40586d',
+        borderRadius: 12,
+        padding: 15,
+        marginBottom: 24
+    },
+
+    label: {
+        color: '#aab5bf',
+        fontSize: 12,
+        textTransform: 'uppercase',
+        letterSpacing: 3,
+        marginBottom: 6
+    },
+
+    info: {
+        color: '#f2f0ec',
+        fontSize: 15
     },
 
     button: {
-
+        width: '100%',
+        backgroundColor: '#40586d',
+        borderWidth: 1,
+        borderColor: '#5e788d',
+        borderRadius: 10,
+        paddingVertical: 14,
+        alignItems: 'center'
     },
 
     buttonText: {
-
+        color: '#f2f0ec',
+        fontSize: 14,
+        fontWeight: '600',
+        letterSpacing: 3
     }
 });
 
