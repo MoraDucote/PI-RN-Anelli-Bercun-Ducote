@@ -71,7 +71,6 @@ function Profile(props) {
                     <View style={styles.post}>
                         <Text>{item.data.descripcionPost}</Text>
                         <Text>Likes: {item.data.likes.length}</Text>
-                        <Text>Fecha: {item.data.createdAt}</Text>
                     </View>
                 )}
             />
@@ -181,7 +180,15 @@ const styles = StyleSheet.create({
     info: {
         color: '#f2f0ec',
         fontSize: 16,
-        marginBottom: 5
+        marginBottom: 8,
+        color: '#ffffff',
+        borderWidth: 1,
+        borderColor: '#5e788d',
+        borderRadius: 10,
+        padding: 7,
+        alignSelf: 'flex-start',
+
+
 
     },
 
