@@ -65,7 +65,17 @@ function Profile(props) {
 
             <Text style={styles.subtitle}>Mis posts</Text>
             
-                <Post />
+            <FlatList
+                data={posts}
+                keyExtractor={(item) => item.id}
+                renderItem={({ item }) => (
+                    <Post
+                        id={item.id}
+                        data={item.data}
+                        navigation={props.navigation}
+                />
+                )}  
+            />
 
             <Pressable style={styles.button} onPress={() => logout()}>
                 <Text style={styles.buttonText}>Cerrar sesión</Text>
