@@ -16,7 +16,7 @@ function NavegacionTab() {
 
     {/* tab screen declara una pantalla dentro las tabs */}
       <Tab.Screen
-        name="Home"
+        name="DailyPosts"
         component={Home}
         options={{
             // agregamos iconos
@@ -25,7 +25,7 @@ function NavegacionTab() {
       />
 
       <Tab.Screen
-        name="NewPost"
+        name="DailyPosts"
         component={NewPost}
         options={{
           tabBarIcon: () => <FontAwesome name="plus" size={24} color="black" />
@@ -33,7 +33,7 @@ function NavegacionTab() {
       />
 
       <Tab.Screen
-        name="Profile"
+        name="DailyPosts"
         component={Profile}
         options={{
           tabBarIcon: () => <FontAwesome name="user" size={24} color="black" />

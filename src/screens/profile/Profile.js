@@ -1,6 +1,7 @@
 import { auth, db } from '../../firebase/config';
 import React, { useState, useEffect } from 'react';
 import { View, Text, Pressable, StyleSheet, FlatList } from 'react-native';
+import Post from '../../components/post/Post';
 
 function Profile(props) {
 
@@ -63,17 +64,8 @@ function Profile(props) {
             <Text style={styles.info}>Email: {email}</Text>
 
             <Text style={styles.subtitle}>Mis posts</Text>
-            <FlatList
-                data={posts}
-                keyExtractor={(item) => item.id}
-                //uso el id de cada post y x cada item (post) muestro: 
-                renderItem={({ item }) => (
-                    <View style={styles.post}>
-                        <Text>{item.data.descripcionPost}</Text>
-                        <Text>Likes: {item.data.likes.length}</Text>
-                    </View>
-                )}
-            />
+            
+                <Post />
 
             <Pressable style={styles.button} onPress={() => logout()}>
                 <Text style={styles.buttonText}>Cerrar sesión</Text>
