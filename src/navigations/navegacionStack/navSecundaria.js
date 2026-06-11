@@ -6,21 +6,22 @@ import Comments from '../../screens/comments/Comments';
 
 const Stack = createNativeStackNavigator();
 
+
 function navSecundaria() {
   return (
-    <Stack.Navigator>
-      <Stack.Screen
-        name="Home"
-        component={Home}
-        options={{ headerShown: false }}
-      />
+      <Stack.Navigator>
+        <Stack.Screen
+          name="Home"
+          component={Home}
+          options={{ headerShown: false }}
+        />
 
-      <Stack.Screen
-        name="Comments"
-        component={Comments}
-        options={{ title: 'Comentarios' }}
-      />
-    </Stack.Navigator>
+        <Stack.Screen
+          name="Comments"
+          component={Comments}
+          options={{ title: 'Comentarios' }}
+        />
+      </Stack.Navigator>
   );
 }
 

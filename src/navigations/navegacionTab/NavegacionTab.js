@@ -12,11 +12,11 @@ const Tab = createBottomTabNavigator();
 function NavegacionTab() {
   return (
     // tab navigator contiene y organiza las pantallas
-    <Tab.Navigator screenOptions={{ tabBarShowLabel: false }}>
+    <Tab.Navigator screenOptions={{ tabBarShowLabel: false , headerTitle:'DailyPosts'}}>
 
       {/* tab screen declara una pantalla dentro las tabs */}
       <Tab.Screen
-        name="DailyPosts Home"
+        name = "Home"
         component={navSecundaria}
         options={{
           // agregamos iconos
@@ -26,7 +26,7 @@ function NavegacionTab() {
       />
 
       <Tab.Screen
-        name="DailyPosts NewPost"
+        name = "NewPost"
         component={NewPost}
         options={{
           tabBarIcon: () => <FontAwesome name="plus" size={24} color="black" />
@@ -34,7 +34,7 @@ function NavegacionTab() {
       />
 
       <Tab.Screen
-        name="DailyPosts Profile"
+        name = "Profile"
         component={Profile}
         options={{
           tabBarIcon: () => <FontAwesome name="user" size={24} color="black" />
