@@ -68,18 +68,15 @@ function Post(props) {
 }
 
 const styles = StyleSheet.create({
-  container: {
-    backgroundColor: '#32475b',
-    borderWidth: 1,
-    borderColor: '#496074',
-    borderRadius: 14,
-    width: 700,
-    height: 200,
-    padding: 14,
-    margin: 8,
-    justifyContent: 'space-between',
-    alignSelf: 'center'
-  },
+container: {
+  backgroundColor: '#32475b',
+  borderWidth: 1,
+  borderColor: '#496074',
+  borderRadius: 14,
+  padding: 14,
+  marginBottom: 12,
+  width: '100%',
+},
 
   email: {
     color: '#f2f0ec',
