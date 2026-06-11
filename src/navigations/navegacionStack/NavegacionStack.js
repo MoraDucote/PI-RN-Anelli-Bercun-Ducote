@@ -5,7 +5,6 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import Login from "../../screens/login/Login";
 import Register from "../../screens/register/Register";
 import NavegacionTab from "../navegacionTab/NavegacionTab";
-import Comments from '../../screens/comments/Comments';
 
 const Stack = createNativeStackNavigator();
 
@@ -20,7 +19,6 @@ function NavegacionStack() {
         <Stack.Screen name="Login" component={Login} />
         <Stack.Screen name="Register" component={Register} />
         <Stack.Screen name="NavegacionTab" component={NavegacionTab} />
-        <Stack.Screen name="Comments" component={Comments} />
       </Stack.Navigator>
     </NavigationContainer>
   );

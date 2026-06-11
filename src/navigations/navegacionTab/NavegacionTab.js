@@ -3,7 +3,7 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { FontAwesome } from '@expo/vector-icons';
 
 // Importamos las pantallas que van a formar parte del menú Tab
-import Home from '../../screens/home/Home';
+import navSecundaria from '../navegacionStack/navSecundaria';
 import NewPost from '../../screens/newPost/NewPost';
 import Profile from '../../screens/profile/Profile';
 
@@ -14,18 +14,19 @@ function NavegacionTab() {
     // tab navigator contiene y organiza las pantallas
     <Tab.Navigator screenOptions={{ tabBarShowLabel: false }}>
 
-    {/* tab screen declara una pantalla dentro las tabs */}
+      {/* tab screen declara una pantalla dentro las tabs */}
       <Tab.Screen
         name="DailyPosts Home"
-        component={Home}
+        component={navSecundaria}
         options={{
-            // agregamos iconos
-          tabBarIcon: () => <FontAwesome name="home" size={24} color="black" />
+          // agregamos iconos
+          tabBarIcon: () => <FontAwesome name="home" size={24} color="black" />,
+          headerShown: false
         }}
       />
 
       <Tab.Screen
-        name="DailyPosts Nuevo Post"
+        name="DailyPosts NewPost"
         component={NewPost}
         options={{
           tabBarIcon: () => <FontAwesome name="plus" size={24} color="black" />
@@ -33,7 +34,7 @@ function NavegacionTab() {
       />
 
       <Tab.Screen
-        name="DailyPosts Perfil"
+        name="DailyPosts Profile"
         component={Profile}
         options={{
           tabBarIcon: () => <FontAwesome name="user" size={24} color="black" />

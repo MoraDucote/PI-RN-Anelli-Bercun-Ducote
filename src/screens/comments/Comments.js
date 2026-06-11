@@ -84,9 +84,6 @@ function Comments(props) {
           </View>
         )}
       />
-      <Pressable style={styles.backButton} onPress={() => props.navigation.goBack()}>
-        <Text style={styles.backButtonText}>Volver a Home</Text>
-      </Pressable>
     </View>
   );
 }
