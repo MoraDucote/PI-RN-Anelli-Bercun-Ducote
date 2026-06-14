@@ -152,9 +152,10 @@ const styles = StyleSheet.create({
 
     title: {
         color: '#f2f0ec',
-        fontSize: 24,
+        fontSize: 30,
+        letterSpacing: 3,
         fontWeight: '600',
-        marginBottom: 4
+        marginBottom: 8
     },
 
     text: {
